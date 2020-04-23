@@ -1,12 +1,3 @@
-provider "azurerm" {
-  features {}
-}
-
-resource "azurerm_resource_group" "example" {
-  name     = "my-resources"
-  location = "West Europe"
-}
-
 module "vnet" {
   source              = "Azure/vnet/azurerm"
   resource_group_name = azurerm_resource_group.example.name
